@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Selva Tea — Complete Strategy & Visual Guide | The Berry Spot</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Fraunces:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --plum: #3D1A4B;
+  --plum-deep: #2A0E35;
+  --plum-mid: #5C2D6E;
+  --plum-light: #8B5DA0;
+  --lime: #C8E64A;
+  --lime-soft: #D8EE7A;
+  --cream: #FFF9F2;
+  --warm: #F5EDE4;
+  --gold: #D4A243;
+  --coral: #E85D4A;
+  --teal: #2ABFB3;
+  --rose: #D4708A;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+@page { 
+  size: A4; 
+  margin: 0; 
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: #2D2D2D;
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+/* COVER PAGE */
+.cover {
+  background: linear-gradient(145deg, var(--plum-deep) 0%, var(--plum) 50%, var(--plum-mid) 100%);
+  color: white;
+  padding: 100px 80px 80px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  page-break-after: always;
+}
+.cover::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -15%;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(200,230,74,0.12) 0%, transparent 65%);
+  border-radius: 50%;
+}
+.cover::after {
+  content: '';
+  position: absolute;
+  bottom: -25%;
+  left: -8%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(200,230,74,0.06) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.cover-badge {
+  display: inline-block;
+  background: var(--lime);
+  color: var(--plum-deep);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 7px 20px;
+  border-radius: 20px;
+  margin-bottom: 36px;
+  position: relative;
+  z-index: 1;
+}
+.cover h1 {
+  font-family: 'Fraunces', serif;
+  font-size: 64px;
+  font-weight: 900;
+  line-height: 1.05;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+.cover h1 span { color: var(--lime); }
+.cover .subtitle {
+  font-size: 18px;
+  opacity: 0.8;
+  max-width: 650px;
+  margin-bottom: 48px;
+  position: relative;
+  z-index: 1;
+}
+.cover-meta {
+  display: flex;
+  gap: 40px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0.5;
+  position: relative;
+  z-index: 1;
+}
+.cover-toc {
+  margin-top: 60px;
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px 40px;
+}
+.cover-toc-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  opacity: 0.7;
+}
+.cover-toc-num {
+  background: rgba(200,230,74,0.2);
+  color: var(--lime);
+  font-weight: 700;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  flex-shrink: 0;
+}
+
+/* CONTENT */
+.content {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 60px 50px;
+}
+
+/* SECTIONS */
+.section {
+  margin-bottom: 72px;
+  page-break-inside: avoid;
+}
+.section-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--plum-mid);
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.section h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--plum-deep);
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+.section p {
+  margin-bottom: 16px;
+  max-width: 800px;
+}
+
+/* HIGHLIGHT BOX */
+.highlight {
+  background: linear-gradient(135deg, var(--plum-deep), var(--plum));
+  color: white;
+  padding: 32px 36px;
+  border-radius: 16px;
+  margin: 28px 0;
+}
+.highlight h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  color: var(--lime);
+  margin-bottom: 10px;
+}
+.highlight p { opacity: 0.9; max-width: none; margin-bottom: 0; }
+
+/* CALLOUT */
+.callout {
+  background: #FAFFF0;
+  border-left: 4px solid var(--lime);
+  padding: 20px 24px;
+  border-radius: 0 12px 12px 0;
+  margin: 24px 0;
+}
+.callout p { font-weight: 500; color: var(--plum-deep); margin-bottom: 0; max-width: none; }
+
+/* BENEFITS GRID */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 28px 0;
+}
+.benefit {
+  background: white;
+  border: 1.5px solid #EDE8E3;
+  border-radius: 14px;
+  padding: 24px 20px;
+}
+.benefit:hover { border-color: var(--lime); }
+.benefit-icon { font-size: 24px; margin-bottom: 10px; }
+.benefit h4 { font-size: 14px; font-weight: 700; color: var(--plum-deep); margin-bottom: 6px; }
+.benefit p { font-size: 12.5px; color: #777; line-height: 1.55; margin-bottom: 0; }
+
+/* NAMING */
+.name-card {
+  display: grid;
+  grid-template-columns: 180px 1fr 100px;
+  align-items: center;
+  padding: 20px 24px;
+  background: white;
+  border: 1.5px solid #EDE8E3;
+  border-radius: 14px;
+  margin-bottom: 12px;
+  position: relative;
+}
+.name-card.top { border-color: var(--lime); background: linear-gradient(135deg, #FAFFF0, white); }
+.name-card.top::after {
+  content: '★ TOP PICK';
+  position: absolute;
+  top: -9px;
+  right: 16px;
+  background: var(--lime);
+  color: var(--plum-deep);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 3px 10px;
+  border-radius: 8px;
+}
+.name-primary {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--plum-deep);
+}
+.name-primary small {
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--plum-mid);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 3px;
+}
+.name-rationale { font-size: 12.5px; color: #666; padding: 0 20px; }
+.name-score { text-align: right; }
+.name-score .score {
+  font-family: 'Fraunces', serif;
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--plum-deep);
+}
+.name-score .score-label { font-size: 9px; text-transform: uppercase; letter-spacing: 1px; color: #aaa; font-weight: 600; }
+
+/* TABLES */
+.data-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 24px 0;
+  font-size: 13px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1.5px solid #EDE8E3;
+}
+.data-table thead th {
+  background: var(--plum-deep);
+  color: white;
+  padding: 14px 18px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.data-table td {
+  padding: 12px 18px;
+  border-bottom: 1px solid #F0EBE6;
+  background: white;
+}
+.data-table tr:last-child td { border-bottom: none; }
+.data-table tr:hover td { background: #FDFCFA; }
+
+/* DIVIDER */
+.divider {
+  height: 2px;
+  background: linear-gradient(to right, var(--lime), transparent);
+  margin: 56px 0;
+  border: none;
+}
+
+/* PRICING */
+.pricing-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 24px 0;
+}
+.pricing-card {
+  background: white;
+  border: 1.5px solid #EDE8E3;
+  border-radius: 14px;
+  padding: 24px 20px;
+  text-align: center;
+}
+.pricing-card.featured { border-color: var(--lime); background: linear-gradient(to bottom, #FAFFF0, white); }
+.pricing-card h4 { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--plum-mid); margin-bottom: 6px; }
+.pricing-card .price { font-family: 'Fraunces', serif; font-size: 36px; font-weight: 900; color: var(--plum-deep); }
+.pricing-card .price small { font-size: 16px; }
+.pricing-card p { font-size: 12px; color: #999; margin-top: 8px; }
+
+/* PILLARS */
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin: 24px 0;
+}
+.pillar {
+  text-align: center;
+  padding: 28px 16px;
+  background: white;
+  border-radius: 14px;
+  border: 1.5px solid #EDE8E3;
+}
+.pillar-num {
+  width: 36px;
+  height: 36px;
+  background: var(--lime);
+  color: var(--plum-deep);
+  font-weight: 800;
+  font-size: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+}
+.pillar h4 { font-size: 13px; font-weight: 700; color: var(--plum-deep); margin-bottom: 6px; }
+.pillar p { font-size: 11.5px; color: #888; line-height: 1.5; }
+
+/* ==========================================
+   DRINK CONCEPT CARDS — THE MAIN EVENT
+   ========================================== */
+.drink-concept {
+  background: white;
+  border: 1.5px solid #EDE8E3;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 36px;
+  page-break-inside: avoid;
+}
+.drink-header {
+  padding: 28px 32px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.drink-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: 12px;
+  color: white;
+  margin-bottom: 10px;
+}
+.drink-tag.hero { background: var(--coral); }
+.drink-tag.signature { background: var(--plum); }
+.drink-tag.fruit { background: #2D6B3F; }
+.drink-tag.matcha { background: var(--rose); }
+.drink-tag.wellness { background: var(--gold); }
+.drink-tag.indulgent { background: #8B6030; }
+
+.drink-name {
+  font-family: 'Fraunces', serif;
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--plum-deep);
+  margin-bottom: 4px;
+}
+.drink-subtitle {
+  font-size: 13px;
+  font-style: italic;
+  color: #999;
+}
+.drink-price {
+  font-family: 'Fraunces', serif;
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--plum-deep);
+  background: var(--warm);
+  padding: 8px 16px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+.drink-body {
+  padding: 0 32px 28px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.drink-details {}
+.drink-details-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--plum-mid);
+  margin-bottom: 6px;
+}
+.drink-ingredients {
+  font-size: 13.5px;
+  color: #555;
+  margin-bottom: 20px;
+}
+.drink-presentation {
+  background: var(--warm);
+  border-radius: 12px;
+  padding: 16px 18px;
+  font-size: 12.5px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.drink-benefits {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.drink-benefit-tag {
+  display: inline-block;
+  background: #F0EBF5;
+  color: var(--plum-mid);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 8px;
+}
+
+/* REFERENCE IMAGE BOX */
+.drink-ref {
+  display: flex;
+  flex-direction: column;
+}
+.ref-image-box {
+  background: linear-gradient(135deg, #F8F4EE, #F0EBE6);
+  border: 2px dashed #D5CFC8;
+  border-radius: 14px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 20px;
+  text-align: center;
+  min-height: 240px;
+  position: relative;
+}
+.ref-image-box .ref-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--plum-mid);
+  margin-bottom: 10px;
+}
+.ref-image-box .ref-search {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--plum-deep);
+  margin-bottom: 12px;
+  padding: 0 10px;
+}
+.ref-image-box .ref-desc {
+  font-size: 11.5px;
+  color: #999;
+  line-height: 1.5;
+  margin-bottom: 14px;
+  padding: 0 8px;
+}
+.ref-image-box a {
+  display: inline-block;
+  background: var(--plum);
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+.ref-image-box a:hover { background: var(--plum-mid); }
+
+/* COLOR SWATCH */
+.color-swatch {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+.swatch {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+/* MERCH SECTION */
+.merch-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin: 24px 0;
+}
+.merch-card {
+  background: white;
+  border: 1.5px solid #EDE8E3;
+  border-radius: 14px;
+  padding: 24px;
+}
+.merch-card h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--plum-deep);
+  margin-bottom: 8px;
+}
+.merch-card p { font-size: 12.5px; color: #777; line-height: 1.55; margin-bottom: 0; }
+
+/* SHOT LIST */
+.shot-item {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid #F0EBE6;
+  align-items: start;
+}
+.shot-item:last-child { border-bottom: none; }
+.shot-num {
+  background: var(--plum);
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.shot-item h4 { font-size: 14px; font-weight: 700; color: var(--plum-deep); margin-bottom: 4px; }
+.shot-item p { font-size: 12.5px; color: #777; margin-bottom: 0; }
+
+/* FOOTER */
+.doc-footer {
+  background: var(--plum-deep);
+  color: white;
+  padding: 40px 60px;
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+/* PRINT */
+@media print {
+  .cover { padding: 60px 50px; min-height: auto; }
+  .cover h1 { font-size: 44px; }
+  .content { padding: 40px 30px; }
+  .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+  .pillars { grid-template-columns: repeat(2, 1fr); }
+  .drink-concept { page-break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================
+     COVER PAGE
+     ============================================ -->
+<div class="cover">
+  <div class="cover-badge">Complete Strategic Brief — February 2026</div>
+  <h1>Selva <span>Tea</span></h1>
+  <p class="subtitle">The complete strategy for localizing Brazilian yerba mate for Singapore — from naming and drink concepts to visual merchandising and photography direction.</p>
+  <div class="cover-meta">
+    <span>Prepared for Gabriel & Will</span>
+    <span>The Berry Spot</span>
+    <span>Açaí Made in Brazil</span>
+  </div>
+  <div class="cover-toc">
+    <div class="cover-toc-item"><span class="cover-toc-num">01</span> The Opportunity</div>
+    <div class="cover-toc-item"><span class="cover-toc-num">06</span> Drink Concepts & Visual Refs</div>
+    <div class="cover-toc-item"><span class="cover-toc-num">02</span> Naming Strategy</div>
+    <div class="cover-toc-item"><span class="cover-toc-num">07</span> Premium Positioning</div>
+    <div class="cover-toc-item"><span class="cover-toc-num">03</span> Lessons from Asia's Tea Giants</div>
+    <div class="cover-toc-item"><span class="cover-toc-num">08</span> Merchandising & Packaging</div>
+    <div class="cover-toc-item"><span class="cover-toc-num">04</span> Competitive Positioning</div>
+    <div class="cover-toc-item"><span class="cover-toc-num">09</span> Photography Shot List</div>
+    <div class="cover-toc-item"><span class="cover-toc-num">05</span> Pricing & Format</div>
+    <div class="cover-toc-item"><span class="cover-toc-num">10</span> Next Steps</div>
+  </div>
+</div>
+
+<!-- ============================================
+     MAIN CONTENT
+     ============================================ -->
+<div class="content">
+
+<!-- 01 — THE OPPORTUNITY -->
+<div class="section">
+  <div class="section-label">01 — The Opportunity</div>
+  <h2>Why Mate Is a Perfect Fit for The Berry Spot</h2>
+  
+  <p>Yerba mate is deeply Brazilian — chimarrão is a daily ritual in southern Brazil, consumed from hand-carved gourds just as açaí is eaten from bowls in the north. It's a natural extension of your "Açaí Made in Brazil" story. Asia-Pacific is the fastest-growing region for yerba mate adoption, with consumers already primed by tea culture and hungry for functional, premium beverages.</p>
+
+  <div class="highlight">
+    <h3>The Core Insight</h3>
+    <p>Singapore's premium tea market (Chagee, HEYTEA, Chicha San Chen) has proven consumers will pay $7–10+ for elaborate, beautiful, functional teas. They want visual spectacle, health benefits, and authentic provenance. Mate delivers all three — it just needs the right translation.</p>
+  </div>
+
+  <div class="benefits-grid">
+    <div class="benefit">
+      <div class="benefit-icon">⚡</div>
+      <h4>Clean, Sustained Energy</h4>
+      <p>~80mg caffeine per cup with theobromine and theophylline for a smooth, jitter-free boost. No crash. "Alert but calm."</p>
+    </div>
+    <div class="benefit">
+      <div class="benefit-icon">🛡️</div>
+      <h4>Antioxidant Powerhouse</h4>
+      <p>More antioxidants than green tea. Rich in polyphenols, vitamins A, C, E, B-complex, plus magnesium and potassium.</p>
+    </div>
+    <div class="benefit">
+      <div class="benefit-icon">🌿</div>
+      <h4>Authentic Provenance</h4>
+      <p>Brazilian chimarrão from Rio Grande do Sul. Just as açaí comes from the Amazon, mate comes from the Atlantic Forest.</p>
+    </div>
+    <div class="benefit">
+      <div class="benefit-icon">🧠</div>
+      <h4>Focus & Clarity</h4>
+      <p>Caffeine + theobromine provides multi-faceted stimulation — energy for the body, clarity for the mind.</p>
+    </div>
+    <div class="benefit">
+      <div class="benefit-icon">💚</div>
+      <h4>Weight Management</h4>
+      <p>Research suggests mate stimulates fat oxidation and fullness. A natural ally for health-conscious consumers.</p>
+    </div>
+    <div class="benefit">
+      <div class="benefit-icon">🫶</div>
+      <h4>Less Acidic Than Coffee</h4>
+      <p>Gentler on the stomach — important for consumers looking for coffee alternatives without digestive discomfort.</p>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- 02 — NAMING STRATEGY -->
+<div class="section">
+  <div class="section-label">02 — Naming Strategy</div>
+  <h2>Rebranding "Mate" for Asian Ears</h2>
+  
+  <p>"Mate" is a minefield in English-speaking Asia — people read it as "mate" (friend). The name needs to evoke energy, nature, Brazil, and premium tea. Here are the strongest options:</p>
+
+  <div style="margin: 28px 0;">
+    <div class="name-card top">
+      <div class="name-primary">SELVA<small>Portuguese for "jungle / forest"</small></div>
+      <div class="name-rationale">Short, exotic, beautiful to say. Evokes the Atlantic Forest. Works as "Selva by The Berry Spot." No mispronunciation issues.</div>
+      <div class="name-score"><div class="score">9.5</div><div class="score-label">Overall Fit</div></div>
+    </div>
+    <div class="name-card top">
+      <div class="name-primary">ERVA<small>Brazilian Portuguese for yerba / herb</small></div>
+      <div class="name-rationale">The actual Brazilian word for the plant. Short, clean — like "matcha" was once unfamiliar but became aspirational. Category-creating.</div>
+      <div class="name-score"><div class="score">9.0</div><div class="score-label">Overall Fit</div></div>
+    </div>
+    <div class="name-card">
+      <div class="name-primary">VERDE<small>Portuguese for "green"</small></div>
+      <div class="name-rationale">Universal health associations. "Verde Tea" immediately understandable. Works with Berry Spot's lime brand colour. Risk: slightly generic.</div>
+      <div class="name-score"><div class="score">8.0</div><div class="score-label">Overall Fit</div></div>
+    </div>
+    <div class="name-card">
+      <div class="name-primary">AMAZONIA TEA<small>Amazonian heritage play</small></div>
+      <div class="name-rationale">World's most recognizable jungle. Sounds premium and exotic. Risk: mate doesn't grow in the Amazon (southern Brazil).</div>
+      <div class="name-score"><div class="score">7.5</div><div class="score-label">Overall Fit</div></div>
+    </div>
+    <div class="name-card">
+      <div class="name-primary">FLORESTA<small>Portuguese for "forest"</small></div>
+      <div class="name-rationale">Beautiful word. Mate grows in the Mata Atlântica. "Floresta Latte" sounds premium. Risk: less punchy for signage.</div>
+      <div class="name-score"><div class="score">7.5</div><div class="score-label">Overall Fit</div></div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p>💡 <strong>Recommendation:</strong> Use "SELVA" or "ERVA" as the product line name, with "Brazilian Energy Tea" as the descriptor. Menu reads: <strong>SELVA LATTE — Brazilian Energy Tea with Oat Milk & Honey — $8.90</strong></p>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- 03 — LESSONS FROM ASIA -->
+<div class="section">
+  <div class="section-label">03 — Lessons from Asia's Tea Giants</div>
+  <h2>What Chagee, HEYTEA & Boba Brands Teach Us</h2>
+
+  <table class="data-table">
+    <thead>
+      <tr><th>Pattern</th><th>What They Do</th><th>Berry Spot Application</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Real Leaves, Not Powder</strong></td>
+        <td>Chagee's entire brand is "original leaf fresh milk tea" — real tea leaves over artificial flavours.</td>
+        <td>"Freshly brewed Brazilian erva-mate" — differentiates from bottled mate drinks.</td>
+      </tr>
+      <tr>
+        <td><strong>Milk Tea as Default</strong></td>
+        <td>Tea + milk is the dominant format in Asia. Chagee's bestsellers are all milk teas.</td>
+        <td>Mate is earthy/bitter — oat milk is the perfect vehicle. Make "Mate Latte" formats the hero.</td>
+      </tr>
+      <tr>
+        <td><strong>Visual Spectacle</strong></td>
+        <td>HEYTEA: cheese foam layers, grape layers, colour gradients. Instagram-worthiness is table stakes.</td>
+        <td>Build with visible layers — green mate base, coloured milks, foam tops, açaí drizzle.</td>
+      </tr>
+      <tr>
+        <td><strong>Fruit Tea Format</strong></td>
+        <td>Mango jasmine, peach oolong, grape green tea — massive across all chains.</td>
+        <td>Passion fruit mate, mango mate, lychee mate — bridges unfamiliar with familiar.</td>
+      </tr>
+      <tr>
+        <td><strong>Health-Forward</strong></td>
+        <td>Chagee: "no artificial flavours, creamers or colours." HEYTEA: "fresh natural fruits."</td>
+        <td>"Natural energy, no crash" / "More antioxidants than green tea" / "Clean caffeine."</td>
+      </tr>
+      <tr>
+        <td><strong>Customization</strong></td>
+        <td>Sugar levels, ice levels, toppings (boba, jelly, cheese foam, mochi, pudding).</td>
+        <td>Berry Spot toppings: chia pudding, coconut jelly, açaí pearls, granola crunch.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<hr class="divider">
+
+<!-- 04 — COMPETITIVE POSITIONING -->
+<div class="section">
+  <div class="section-label">04 — Competitive Positioning</div>
+  <h2>Why Berry Spot Can Win This</h2>
+  
+  <p>Singapore's premium tea market is dominated by Chinese/Taiwanese traditions. Nobody is doing South American tea. Berry Spot has the unique ability to introduce an entirely new origin story — with authentic Brazilian credentials.</p>
+
+  <table class="data-table">
+    <thead>
+      <tr><th>Factor</th><th>Chagee</th><th>HEYTEA</th><th>Matcha Brands</th><th style="background: var(--plum-mid);">Berry Spot Selva</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Origin</strong></td>
+        <td>Chinese (Yunnan)</td>
+        <td>Chinese (Shenzhen)</td>
+        <td>Japanese (Uji, Kyoto)</td>
+        <td><strong>Brazilian (Atlantic Forest) — unique</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Premium Signal</strong></td>
+        <td>Dior-esque packaging</td>
+        <td>Cheese foam innovation</td>
+        <td>"Ceremonial grade"</td>
+        <td><strong>Gourd & bombilla ritual, single-origin</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Health Angle</strong></td>
+        <td>"No artificial" (limited)</td>
+        <td>"Natural fruits"</td>
+        <td>Antioxidants, L-theanine</td>
+        <td><strong>Full superfood: energy + focus + antioxidants</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Energy</strong></td>
+        <td>Moderate caffeine</td>
+        <td>Moderate caffeine</td>
+        <td>Caffeine + L-theanine</td>
+        <td><strong>~80mg + theobromine (clean, sustained)</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Food Ecosystem</strong></td>
+        <td>Tea-only stores</td>
+        <td>Tea-only stores</td>
+        <td>Usually standalone</td>
+        <td><strong>Natural pairing with açaí bowls</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Price</strong></td>
+        <td>$5–7 SGD</td>
+        <td>$6–8 SGD</td>
+        <td>$6–9 SGD</td>
+        <td><strong>$6.90–9.90 SGD</strong></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<hr class="divider">
+
+<!-- 05 — PRICING -->
+<div class="section">
+  <div class="section-label">05 — Pricing & Format Strategy</div>
+  <h2>How to Price & Present</h2>
+  
+  <div class="pricing-row">
+    <div class="pricing-card">
+      <h4>Selva Classic</h4>
+      <div class="price"><small>$</small>6.90</div>
+      <p>Simple brewed mate with honey or fruit. Entry point.</p>
+    </div>
+    <div class="pricing-card featured">
+      <h4>Selva Latte / Fruit Tea</h4>
+      <div class="price"><small>$</small>8.90</div>
+      <p>Layered drinks with milk, fruit, or specialty ingredients. Bread and butter.</p>
+    </div>
+    <div class="pricing-card">
+      <h4>Selva Premium</h4>
+      <div class="price"><small>$</small>9.90</div>
+      <p>Açaí Fusion, Green Zen, Coconut Cloud. Protein/superfood add-ons +$1–3.</p>
+    </div>
+  </div>
+
+  <p>Use Portuguese sizing: <strong>Médio</strong> (regular) and <strong>Grande</strong> (large, +$2). Clear branded cups to show off layers.</p>
+</div>
+
+<hr class="divider">
+
+<!-- ============================================
+     06 — DRINK CONCEPTS WITH VISUAL REFERENCES
+     ============================================ -->
+<div class="section">
+  <div class="section-label">06 — Drink Concepts & Visual References</div>
+  <h2>6 Mate Drinks Localized for Singapore</h2>
+  
+  <p>Each concept bridges the unfamiliar (mate) with formats Singaporean consumers already love. All stay true to Berry Spot's health-first positioning. The reference images show the exact layering, colour palette, and presentation style to aim for in photography.</p>
+
+  <!-- DRINK 1: TROPICAL SELVA LATTE -->
+  <div class="drink-concept">
+    <div class="drink-header">
+      <div>
+        <div class="drink-tag hero">Hero Launch Drink</div>
+        <div class="drink-name">Tropical Selva Latte</div>
+        <div class="drink-subtitle">The gateway drink — familiar meets exotic</div>
+      </div>
+      <div class="drink-price">$8.90</div>
+    </div>
+    <div class="drink-body">
+      <div class="drink-details">
+        <div class="drink-details-label">Ingredients</div>
+        <div class="drink-ingredients">Freshly brewed mate · Coconut milk · Mango purée · Honey · Ice</div>
+        
+        <div class="drink-details-label">Visual Presentation</div>
+        <div class="drink-presentation">Three distinct layers in a clear cup: golden mango purée base, white coconut milk middle, vibrant green mate on top. Finished with honey drizzle and a fresh lime wheel. The gold → white → green gradient is the hero shot.</div>
+
+        <div class="drink-details-label">Functional Benefits</div>
+        <div class="drink-benefits">
+          <span class="drink-benefit-tag">⚡ Natural Energy</span>
+          <span class="drink-benefit-tag">🥭 Vitamin C</span>
+          <span class="drink-benefit-tag">🥥 Healthy Fats</span>
+        </div>
+      </div>
+      <div class="drink-ref">
+        <div class="ref-image-box">
+          <div class="ref-label">Photo Reference</div>
+          <div class="color-swatch">
+            <div class="swatch" style="background: #FFA820;"></div>
+            <div class="swatch" style="background: #F5F0E5;"></div>
+            <div class="swatch" style="background: #6B9E30;"></div>
+          </div>
+          <div class="ref-search">"Iced Mango Matcha Latte"</div>
+          <div class="ref-desc">Same gold → white → green layering. Swap matcha for mate. The format is proven Instagram gold — hundreds of reference images available.</div>
+          <a href="https://www.google.com/search?tbm=isch&q=iced+mango+matcha+latte+layered" target="_blank">View Reference Photos →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DRINK 2: AÇAÍ SELVA FUSION -->
+  <div class="drink-concept">
+    <div class="drink-header">
+      <div>
+        <div class="drink-tag signature">Brand Signature</div>
+        <div class="drink-name">Açaí Selva Fusion</div>
+        <div class="drink-subtitle">The ultimate Berry Spot crossover — bowls meet tea</div>
+      </div>
+      <div class="drink-price">$9.90</div>
+    </div>
+    <div class="drink-body">
+      <div class="drink-details">
+        <div class="drink-details-label">Ingredients</div>
+        <div class="drink-ingredients">Brewed mate · Açaí purée · Banana · Guaraná syrup · Oat milk</div>
+        
+        <div class="drink-details-label">Visual Presentation</div>
+        <div class="drink-presentation">Your brand colours in drinkable form. Oat milk base, vivid green mate middle, deep purple açaí crown. The purple-and-green palette IS Berry Spot. Açaí drizzle down the inside of the cup.</div>
+
+        <div class="drink-details-label">Functional Benefits</div>
+        <div class="drink-benefits">
+          <span class="drink-benefit-tag">⚡ Double Energy (mate + guaraná)</span>
+          <span class="drink-benefit-tag">🪶 Superfood Blend</span>
+          <span class="drink-benefit-tag">💪 Antioxidants</span>
+        </div>
+      </div>
+      <div class="drink-ref">
+        <div class="ref-image-box">
+          <div class="ref-label">Photo Reference</div>
+          <div class="color-swatch">
+            <div class="swatch" style="background: #EDE0D0;"></div>
+            <div class="swatch" style="background: #5A8E2A;"></div>
+            <div class="swatch" style="background: #4B2065;"></div>
+          </div>
+          <div class="ref-search">"Butterfly Pea Matcha Latte"</div>
+          <div class="ref-desc">Same purple-over-green layering. Our version uses real açaí for authentic superfood credentials and dramatic natural colour contrast.</div>
+          <a href="https://www.google.com/search?tbm=isch&q=butterfly+pea+matcha+latte+purple+green+layered" target="_blank">View Reference Photos →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DRINK 3: PASSION FOREST -->
+  <div class="drink-concept">
+    <div class="drink-header">
+      <div>
+        <div class="drink-tag fruit">Fruit Tea Format</div>
+        <div class="drink-name">Passion Forest</div>
+        <div class="drink-subtitle">South American sunshine in a cup</div>
+      </div>
+      <div class="drink-price">$8.90</div>
+    </div>
+    <div class="drink-body">
+      <div class="drink-details">
+        <div class="drink-details-label">Ingredients</div>
+        <div class="drink-ingredients">Cold-brewed mate · Fresh passion fruit · Lychee · Honey · Optional sparkling water</div>
+        
+        <div class="drink-details-label">Visual Presentation</div>
+        <div class="drink-presentation">Light and luminous. Golden passion fruit pulp with visible seeds floating throughout — seeds create natural suspended particles catching the light. Can be served sparkling for a mocktail feel. Passion fruit is South American (authentic!) and universally loved in Asia.</div>
+
+        <div class="drink-details-label">Functional Benefits</div>
+        <div class="drink-benefits">
+          <span class="drink-benefit-tag">🌿 Refreshing</span>
+          <span class="drink-benefit-tag">🍋 Vitamin C</span>
+          <span class="drink-benefit-tag">✨ Low Calorie</span>
+        </div>
+      </div>
+      <div class="drink-ref">
+        <div class="ref-image-box">
+          <div class="ref-label">Photo Reference</div>
+          <div class="color-swatch">
+            <div class="swatch" style="background: #E8C830;"></div>
+            <div class="swatch" style="background: #C8B040;"></div>
+            <div class="swatch" style="background: #88AA38;"></div>
+          </div>
+          <div class="ref-search">"Passion Fruit Iced Tea"</div>
+          <div class="ref-desc">The key visual is passion fruit seeds suspended throughout the drink. Golden colour against subtle green tint creates a sun-kissed tropical palette.</div>
+          <a href="https://www.google.com/search?tbm=isch&q=passion+fruit+iced+tea+seeds+golden" target="_blank">View Reference Photos →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DRINK 4: GREEN ZEN -->
+  <div class="drink-concept">
+    <div class="drink-header">
+      <div>
+        <div class="drink-tag matcha">Matcha Crossover</div>
+        <div class="drink-name">Green Zen</div>
+        <div class="drink-subtitle">Matcha's Brazilian cousin</div>
+      </div>
+      <div class="drink-price">$9.90</div>
+    </div>
+    <div class="drink-body">
+      <div class="drink-details">
+        <div class="drink-details-label">Ingredients</div>
+        <div class="drink-ingredients">Mate + matcha chia pudding base · Oat milk · Vanilla · Light agave</div>
+        
+        <div class="drink-details-label">Visual Presentation</div>
+        <div class="drink-presentation">Three shades of green. Deep green chia pudding base (visible seeds), emerald mate-matcha middle, creamy oat milk top, dusted with matcha powder. Gateway for Singapore's massive matcha fanbase — they'll recognise the format instantly.</div>
+
+        <div class="drink-details-label">Functional Benefits</div>
+        <div class="drink-benefits">
+          <span class="drink-benefit-tag">🧠 Focus</span>
+          <span class="drink-benefit-tag">🛡️ Antioxidants</span>
+          <span class="drink-benefit-tag">🌱 Omega-3</span>
+        </div>
+      </div>
+      <div class="drink-ref">
+        <div class="ref-image-box">
+          <div class="ref-label">Photo Reference</div>
+          <div class="color-swatch">
+            <div class="swatch" style="background: #305F18;"></div>
+            <div class="swatch" style="background: #4E8C2A;"></div>
+            <div class="swatch" style="background: #EEE8DC;"></div>
+          </div>
+          <div class="ref-search">"Matcha Chia Pudding Latte"</div>
+          <div class="ref-desc">Green layers with chia seed texture visible at the base and creamy oat milk cap. Uses the same visual language Singapore's matcha drinkers already love.</div>
+          <a href="https://www.google.com/search?tbm=isch&q=matcha+chia+pudding+latte+layered+green" target="_blank">View Reference Photos →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DRINK 5: GOLDEN HOUR -->
+  <div class="drink-concept">
+    <div class="drink-header">
+      <div>
+        <div class="drink-tag wellness">Wellness Forward</div>
+        <div class="drink-name">Golden Hour</div>
+        <div class="drink-subtitle">Turmeric + mate = anti-inflammatory energy</div>
+      </div>
+      <div class="drink-price">$8.90</div>
+    </div>
+    <div class="drink-body">
+      <div class="drink-details">
+        <div class="drink-details-label">Ingredients</div>
+        <div class="drink-ingredients">Brewed mate · Turmeric · Ginger · Oat milk · Cinnamon · Honey · Black pepper</div>
+        
+        <div class="drink-details-label">Visual Presentation</div>
+        <div class="drink-presentation">Rich amber-gold gradient from deep gold base to pale gold cream top. Cinnamon dust on foam. Can be served warm or iced. The golden latte format is already a wellness staple — our version adds the clean energy that golden lattes typically lack.</div>
+
+        <div class="drink-details-label">Functional Benefits</div>
+        <div class="drink-benefits">
+          <span class="drink-benefit-tag">🛡️ Anti-Inflammatory</span>
+          <span class="drink-benefit-tag">⚡ Clean Energy</span>
+          <span class="drink-benefit-tag">🌶️ Immunity</span>
+        </div>
+      </div>
+      <div class="drink-ref">
+        <div class="ref-image-box">
+          <div class="ref-label">Photo Reference</div>
+          <div class="color-swatch">
+            <div class="swatch" style="background: #C39428;"></div>
+            <div class="swatch" style="background: #E0C878;"></div>
+            <div class="swatch" style="background: #F0E0C0;"></div>
+          </div>
+          <div class="ref-search">"Iced Golden Turmeric Latte"</div>
+          <div class="ref-desc">Warm amber tones, wellness aesthetic. The unique warm gold colour stands out against the greens and purples of the other Selva drinks.</div>
+          <a href="https://www.google.com/search?tbm=isch&q=iced+golden+turmeric+latte+amber+layered+oat+milk" target="_blank">View Reference Photos →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DRINK 6: COCONUT CLOUD -->
+  <div class="drink-concept">
+    <div class="drink-header">
+      <div>
+        <div class="drink-tag indulgent">Indulgent Treat</div>
+        <div class="drink-name">Coconut Cloud</div>
+        <div class="drink-subtitle">Berry Spot's answer to cheese foam</div>
+      </div>
+      <div class="drink-price">$9.90</div>
+    </div>
+    <div class="drink-body">
+      <div class="drink-details">
+        <div class="drink-details-label">Ingredients</div>
+        <div class="drink-ingredients">Strong-brewed mate · Coconut cream foam · Pandan syrup · Brown sugar · Oat milk</div>
+        
+        <div class="drink-details-label">Visual Presentation</div>
+        <div class="drink-presentation">Deep green mate with brown sugar swirls, topped with thick, pillowy coconut cream foam — Berry Spot's healthier version of HEYTEA's cheese foam. Pandan (Southeast Asia's vanilla) adds instant local familiarity. Brown sugar drizzle cascades down inside of cup.</div>
+
+        <div class="drink-details-label">Functional Benefits</div>
+        <div class="drink-benefits">
+          <span class="drink-benefit-tag">🥥 Healthy Fats</span>
+          <span class="drink-benefit-tag">⚡ Sustained Energy</span>
+          <span class="drink-benefit-tag">🌴 Southeast Asian Twist</span>
+        </div>
+      </div>
+      <div class="drink-ref">
+        <div class="ref-image-box">
+          <div class="ref-label">Photo Reference</div>
+          <div class="color-swatch">
+            <div class="swatch" style="background: #F8F2E8;"></div>
+            <div class="swatch" style="background: #488820;"></div>
+            <div class="swatch" style="background: #7A5510;"></div>
+          </div>
+          <div class="ref-search">"Pandan Coconut Cream Foam Latte"</div>
+          <div class="ref-desc">Green-under-white foam with brown sugar drizzle. The pandan coconut latte is already a hit across Southeast Asia — our version adds mate's energy underneath.</div>
+          <a href="https://www.google.com/search?tbm=isch&q=pandan+coconut+cream+foam+iced+latte+green" target="_blank">View Reference Photos →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p>💡 <strong>Launch Recommendation:</strong> Start with 3–4 drinks, not all 6. Lead with <strong>Tropical Selva Latte</strong> (most accessible), <strong>Açaí Selva Fusion</strong> (brand signature), and <strong>Passion Forest</strong> (fruit tea format). Add Green Zen, Golden Hour, and Coconut Cloud as seasonal rotations.</p>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- 07 — PREMIUM POSITIONING -->
+<div class="section">
+  <div class="section-label">07 — Premium Positioning Strategy</div>
+  <h2>Four Pillars to Justify Premium</h2>
+
+  <p>The question: "How do we position mate as premium the way matcha has ceremonial heritage?" The answer: mate actually has MORE elaborate ceremony than matcha — it just needs to be told properly.</p>
+
+  <div class="pillars">
+    <div class="pillar">
+      <div class="pillar-num">1</div>
+      <h4>Ritual & Ceremony</h4>
+      <p>The cebador prepares mate in a hand-carved gourd with a silver bombilla. Circular serving order, 15-20 refills, 500+ years of gaucho tradition. Display gourd + bombilla at counter as storytelling artefact.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">2</div>
+      <h4>Provenance</h4>
+      <p>Single-origin erva-mate from Rio Grande do Sul's Atlantic Forest. Same weight as "first-harvest sencha from Uji, Kyoto." Brazilian chimarrão vacuum-packed = vibrant neon-green colour.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">3</div>
+      <h4>Packaging</h4>
+      <p>Chagee's Dior-inspired cups became collectibles. Berry Spot's botanical illustration theme (mate leaves, toucan, Atlantic Forest flora) in plum + lime across cup, sleeve, bag.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">4</div>
+      <h4>The Spectacle</h4>
+      <p>HEYTEA dominates via Instagram-worthy drinks. Mate's green = canvas. Layer against mango gold, açaí purple, coconut white. Clear cups show stratification. Coconut cream foam = cheese foam answer.</p>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- 08 — MERCHANDISING -->
+<div class="section">
+  <div class="section-label">08 — Merchandising & Packaging</div>
+  <h2>Six Touchpoints — Every Moment Signals Premium</h2>
+  
+  <p>Chagee proved packaging can be the product. Their Dior-inspired cups became social media collectibles. For Selva Tea, every touchpoint should feel worth photographing.</p>
+
+  <div class="merch-grid">
+    <div class="merch-card">
+      <h4>1. Clear Cup with Botanical Band</h4>
+      <p>Clear PET cups (show layering) with printed "Selva by The Berry Spot" band featuring toucan logo + botanical illustrations. Band sits mid-cup, framing layers above and below. Print in plum + lime on clear.</p>
+    </div>
+    <div class="merch-card">
+      <h4>2. Illustrated Cup Sleeve</h4>
+      <p>Dense botanical illustration — mate leaves, açaí palms, toucans, ferns — in plum + lime palette. Back carries short "What is Selva?" story. Transforms takeaway cup into something designed, premium, photographable.</p>
+    </div>
+    <div class="merch-card">
+      <h4>3. Collectible Paper Bag</h4>
+      <p>Same botanical illustration as sleeve, extended to full bag. Beautiful enough to keep. Include printed card inside: "Selva: Brazil's Energy Secret" with QR to origin story. Reference: Chagee's bags went viral.</p>
+    </div>
+    <div class="merch-card">
+      <h4>4. Counter Display: Gourd & Bombilla</h4>
+      <p>Hand-carved mate gourd and silver bombilla on display — storytelling artefact, not for serving. Small acrylic card beside it. Creates curiosity, conversation, and ceremonial premium signal.</p>
+    </div>
+    <div class="merch-card">
+      <h4>5. Reusable "Selva" Tumbler</h4>
+      <p>Branded tumbler in plum + lime with botanical illustration. $16.90 or "Selva Starter Kit" bundle ($24.90 = tumbler + first drink + mate sample). Walking billboard + loyalty play.</p>
+    </div>
+    <div class="merch-card">
+      <h4>6. Seasonal Limited Editions</h4>
+      <p>Quarterly limited cup designs — CNY red + gold edition, Earth Day nature theme, local artist collab. Creates urgency, collectibility, and social buzz.</p>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- 09 — PHOTOGRAPHY -->
+<div class="section">
+  <div class="section-label">09 — Photography Shot List</div>
+  <h2>8 Shots for the Launch Shoot</h2>
+
+  <p>Use the same visual system from Green Fuel and Recovery: chartreuse background + hero product + bold text + ingredient callouts with functional benefits.</p>
+
+  <div style="margin: 24px 0;">
+    <div class="shot-item">
+      <div class="shot-num">1</div>
+      <div><h4>Full Lineup Rainbow</h4><p>All Selva drinks left-to-right in colour order (gold → green → purple). Clean white or marble surface. The hero image for launch day.</p></div>
+    </div>
+    <div class="shot-item">
+      <div class="shot-num">2</div>
+      <div><h4>Individual Hero Shots × 6</h4><p>Each drink on its own, straight-on. Two versions: plum background (brand) and cream (clean). Menu panels and digital ads.</p></div>
+    </div>
+    <div class="shot-item">
+      <div class="shot-num">3</div>
+      <div><h4>Ingredient Callout Posters × 3</h4><p>Green Fuel / Recovery format for top 3 drinks. Hero product centre, arrows to ingredients with functional benefit text. A-board posters, social, undercounter.</p></div>
+    </div>
+    <div class="shot-item">
+      <div class="shot-num">4</div>
+      <div><h4>Hands Holding Pair</h4><p>Two hands, two drinks — the dual-hand format from your bowl photography. Recommend: Tropical Selva Latte + Açaí Selva Fusion (gold and purple contrast).</p></div>
+    </div>
+    <div class="shot-item">
+      <div class="shot-num">5</div>
+      <div><h4>Bowl + Tea Pairing</h4><p>Açaí bowl next to Selva drink — "complete meal" shot. Cross-sell hero image for table tents and combo promotions.</p></div>
+    </div>
+    <div class="shot-item">
+      <div class="shot-num">6</div>
+      <div><h4>Heritage / Origin Flat Lay</h4><p>Selva drink next to traditional gourd and bombilla, loose mate leaves, tropical greenery. The storytelling content — "where it comes from."</p></div>
+    </div>
+    <div class="shot-item">
+      <div class="shot-num">7</div>
+      <div><h4>Close-Up Layer Detail</h4><p>Macro shots showing precise layering — mango meeting coconut milk, chia seeds in Green Zen, passion fruit seeds suspended in liquid. Quality signals.</p></div>
+    </div>
+    <div class="shot-item">
+      <div class="shot-num">8</div>
+      <div><h4>Pour Sequence (Video)</h4><p>15–30 second ASMR-style pour showing drink built layer by layer. One of the most viral formats in the tea space. Perfect for Reels and TikTok.</p></div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- 10 — GO-TO-MARKET -->
+<div class="section">
+  <div class="section-label">10 — Go-to-Market & Next Steps</div>
+  <h2>4 Launch Pillars + What to Do Now</h2>
+
+  <div class="pillars">
+    <div class="pillar">
+      <div class="pillar-num">1</div>
+      <h4>Educate, Don't Explain</h4>
+      <p>Say "Brazil's best-kept energy secret" not "mate is a South American tea." Use benefits, not botany.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">2</div>
+      <h4>Lead with Familiar</h4>
+      <p>Launch with formats people know (latte, fruit tea) and flavours they love (mango, passion fruit, coconut).</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">3</div>
+      <h4>Visual-First Menu</h4>
+      <p>These drinks MUST photograph beautifully. "Selva Tea" menu section with drink photography — like Green Fuel / Recovery callouts.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">4</div>
+      <h4>Cross-Sell with Bowls</h4>
+      <p>"Pair your bowl with a Selva Tea — $3 off." Creates complete meal occasions and cross-introduces products.</p>
+    </div>
+  </div>
+
+  <div class="highlight" style="margin-top: 32px;">
+    <h3>Recommended Next Steps</h3>
+    <p><strong>1. Decide on the name.</strong> Test "Selva" and "Erva" with staff and loyal customers.<br><br>
+    <strong>2. R&D on 3 launch drinks.</strong> Have Gabriel trial-batch Tropical Selva Latte, Açaí Selva Fusion, and Passion Forest. Focus on flavour balance, visual layering, and prep speed.<br><br>
+    <strong>3. Source mate.</strong> Brazilian chimarrão-style erva-mate (fresher, greener, more authentic). The bright green colour is a visual advantage.<br><br>
+    <strong>4. Design menu integration.</strong> Menu section, A-board poster, and social graphics using the Berry Spot visual system.<br><br>
+    <strong>5. Plan the cross-sell.</strong> "Bowl + Tea" combo pricing is crucial. Even a simple table tent or counter card can move the needle.</p>
+  </div>
+</div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="doc-footer">
+  The Berry Spot · Açaí Made in Brazil · Selva Tea Complete Strategy · February 2026<br>
+  Confidential — For Internal Use Only
+</div>
+
+</body>
+</html>
